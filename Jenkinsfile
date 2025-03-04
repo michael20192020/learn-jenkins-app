@@ -23,7 +23,10 @@ pipeline {
                 set PATH=%CD%\\node-v18.17.1-win-x64;%PATH%   
                 echo "start"
                 node --version
-                npm --version
+                echo "before npm"
+                npm --version || echo "npm version failed"
+                echo "after npm"
+                
                 echo "keep alive"
                 timeout /T 30
                 echo "start run build"
