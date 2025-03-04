@@ -27,7 +27,14 @@ pipeline {
                 npm run build
                 dir
                 '''
-                
+                nodejs(nodeJSInstallationName: 'NodeJS_Latest') {
+                bat '''
+                node --version
+                npm --version
+                npm ci || echo "npm ci failed"
+                npm run build
+                '''
+                }
 
             }
         }
