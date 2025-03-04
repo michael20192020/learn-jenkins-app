@@ -11,6 +11,7 @@ pipeline {
             agent {
                 docker {
                     image 'mcr.microsoft.com/windows/servercore:ltsc2022'
+                    args '-it --entrypoint powershell'
                     reuseNode true
                 }
             }
