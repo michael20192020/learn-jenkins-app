@@ -24,11 +24,11 @@ pipeline {
                 
                 node --version
                 npm --version
-                bat 'echo "start"'
+                'echo "start"'
                 npm run build
-                bat 'echo "run build"'
+                'echo "run build"'
                 dir
-                bat 'echo "finish"'
+                'echo "finish"'
                 '''
                
 
