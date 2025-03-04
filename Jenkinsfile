@@ -21,6 +21,8 @@ pipeline {
                 tar -xf nodejs.zip
                 set PATH=%CD%\\node-v18.17.1-win-x64;%PATH%
                 npm --version
+                npm ci
+                npm run build
                 '''
                 
 
