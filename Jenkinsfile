@@ -24,6 +24,7 @@ pipeline {
                 echo "start"
                 node --version
                 npm --version
+                where npm
                 echo "start run build"
                 npm run build
                 echo "end run build"
