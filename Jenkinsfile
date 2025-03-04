@@ -24,7 +24,8 @@ pipeline {
                 echo "start"
                 node --version
                 npm --version
-                where npm
+                echo "keep alive"
+                timeout /T 30
                 echo "start run build"
                 npm run build
                 echo "end run build"
