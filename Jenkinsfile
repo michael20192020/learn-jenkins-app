@@ -24,10 +24,11 @@ pipeline {
                 
                 node --version
                 npm --version
-                npx npm@latest help ci
-                npm ci --loglevel verbose
+                bat 'echo "start"'
                 npm run build
+                bat 'echo "run build"'
                 dir
+                bat 'echo "finish"'
                 '''
                
 
