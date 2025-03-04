@@ -21,10 +21,10 @@ pipeline {
                 curl -o nodejs.zip https://nodejs.org/dist/v23.9.0/node-v23.9.0-win-x64.zip
                 tar -xf nodejs.zip
                 set PATH=%CD%\\node-v23.9.0-win-x64;%PATH%   
-                
+                'echo "start"'
                 node --version
                 npm --version
-                'echo "start"'
+                
                 npm run build
                 'echo "run build"'
                 dir
