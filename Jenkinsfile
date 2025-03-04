@@ -23,6 +23,7 @@ pipeline {
                 set PATH=%CD%\\node-v23.9.0-win-x64;%PATH%   
                 node --version
                 npm --version
+                npm help ci
                 npm ci --loglevel verbose
                 npm run build
                 dir
