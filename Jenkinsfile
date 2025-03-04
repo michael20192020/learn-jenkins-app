@@ -18,7 +18,6 @@ pipeline {
                 
                 bat '''
                 dir
-               
                 set PATH=D:\\Program Files\\nodejs;%PATH%
                 node --version
                 npm --version
