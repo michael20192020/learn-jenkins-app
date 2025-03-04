@@ -18,23 +18,16 @@ pipeline {
                 
                 bat '''
                 dir
-                set PATH=D:\\Program Files\\nodejs;%PATH%
-                echo %PATH%  
-                where node   
+                curl -o nodejs.zip https://nodejs.org/dist/v23.9.0/node-v23.9.0-win-x64.zip
+                tar -xf nodejs.zip
+                set PATH=%CD%\\node-v18.17.1-win-x64;%PATH%   
                 node --version
                 npm --version
                 npm ci || echo "npm ci failed"
                 npm run build
                 dir
                 '''
-                nodejs(nodeJSInstallationName: 'NodeJS_Latest') {
-                bat '''
-                node --version
-                npm --version
-                npm ci || echo "npm ci failed"
-                npm run build
-                '''
-                }
+               
 
             }
         }
