@@ -10,13 +10,18 @@ pipeline {
         stage('Build') {
             agent {
                 docker {
-                    image 'mcr.microsoft.com/windows/nanoserver/node:18'
                     image 'mcr.microsoft.com/windows/servercore:ltsc2022'
                     reuseNode true
                 }
             }
             steps {
-                bat 'npm --version'
+                
+                bat '''
+                curl -o nodejs.zip https://nodejs.org/dist/v18.17.1/node-v18.17.1-win-x64.zip
+                tar -xf nodejs.zip
+                set PATH=%CD%\\node-v18.17.1-win-x64;%PATH%
+                npm --version
+                '''
                 
 
             }
