@@ -19,8 +19,10 @@ pipeline {
                 bat '''
                 dir
                 set PATH=D:\\Program Files\\nodejs;%PATH%
-                "D:\Program Files\nodejs\node" --version
-                "D:\Program Files\nodejs\npm" --version
+                "D:/Program Files/nodejs/node" --version
+                "D:/Program Files/nodejs/npm" --version
+                "D:\\Program Files\\nodejs\node" --version
+                "D:\\Program Files\\nodejs\npm" --version
                 node --version
                 npm --version
                 npm ci || echo "npm ci failed"
