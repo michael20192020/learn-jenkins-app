@@ -44,9 +44,18 @@ pipeline {
             }
         }
         stage('Test') {
+            agent {
+                docker {
+                    image 'mcr.microsoft.com/windows/servercore:ltsc2022'
+                    reuseNode true
+                }
+            }
             steps {
                 echo 'Test stage'
-                sh 'test -f package.json'
+                sh '''
+                  test -f package.json
+                  npm test
+                '''
             }
 
         }
