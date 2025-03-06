@@ -18,10 +18,14 @@ pipeline {
                 
                 bat '''
 
+                echo %PATH%
+                
                 echo "before npm"
                 npm --version || echo "npm version failed"
                 echo "after npm"
+
                 
+
                 dir
                 curl -o nodejs.zip https://nodejs.org/dist/v18.17.1/node-v18.17.1-win-x64.zip
                 tar -xf nodejs.zip
