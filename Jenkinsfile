@@ -33,18 +33,21 @@ pipeline {
                 set PATH=%CD%\\node-v18.17.1-win-x64;%PATH%   
                 echo "start"
                 node --version
-
-                npm ci
-               
-                echo "start run build"
+                npm ci        
                 npm run build
-                echo "end run build"
+
                 dir
                 echo "finish"
                 '''
                
 
             }
+        }
+        stage('Test') {
+            steps {
+                echo "Test stage"
+            }
+
         }
     }
 }
