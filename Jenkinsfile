@@ -17,6 +17,7 @@ pipeline {
             steps {
                 
                 bat '''
+                set PATH=D:\\Program Files\\nodejs;%PATH%
 
                 echo %PATH%
                 
