@@ -33,6 +33,9 @@ pipeline {
                 set PATH=%CD%\\node-v18.17.1-win-x64;%PATH%   
                 echo "start"
                 node --version
+
+                npm ci
+                
                 echo "before npm"
                 npm --version || echo "npm version failed"
                 echo "after npm"
