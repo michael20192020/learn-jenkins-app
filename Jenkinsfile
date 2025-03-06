@@ -35,13 +35,7 @@ pipeline {
                 node --version
 
                 npm ci
-                
-                echo "before npm"
-                npm --version || echo "npm version failed"
-                echo "after npm"
-                
-                echo "keep alive"
-                timeout /T 30
+               
                 echo "start run build"
                 npm run build
                 echo "end run build"
