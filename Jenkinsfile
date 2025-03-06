@@ -45,7 +45,8 @@ pipeline {
         }
         stage('Test') {
             steps {
-                echo "Test stage"
+                echo 'Test stage'
+                sh 'test -f package.json'
             }
 
         }
