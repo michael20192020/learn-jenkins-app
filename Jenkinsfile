@@ -59,6 +59,23 @@ pipeline {
             }
 
         }
+        stage('Deploy') {
+            agent {
+                docker {
+                    image 'mcr.microsoft.com/windows/servercore:ltsc2022'
+                    reuseNode true
+                }
+            }
+            steps {
+                echo 'Deploy stage'
+                sh '''
+                  npm install netlify-cli -g 
+                  netlify --version
+                  
+                '''
+            }
+
+        }
     }
 
     post {
