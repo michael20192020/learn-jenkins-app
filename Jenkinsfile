@@ -70,8 +70,8 @@ pipeline {
             steps {
                 echo 'Deploy stage'
                 sh '''
-                  npm install netlify-cli -g 
-                  netlify --version
+                  npm install netlify-cli 
+                  node_modules/.bin/netlify --version
                   
                 '''
             }
@@ -81,6 +81,7 @@ pipeline {
 
     post {
         always {
+            //publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false,reportDir:])
             junit 'test-result/junit.xml'
         }
 
