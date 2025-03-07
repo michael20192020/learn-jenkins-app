@@ -40,7 +40,7 @@ pipeline {
                 echo "start"
                 node --version
                 // npm ci        
-                
+                npx update-browserslist-db@latest
                 npm run build
 
                 dir
