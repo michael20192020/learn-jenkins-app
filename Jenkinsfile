@@ -41,6 +41,7 @@ pipeline {
                 node --version
                 // npm ci        
                 //npx update-browserslist-db@latest
+                npm install --save-dev @babel/plugin-proposal-private-property-in-object
                 npm run build
 
                 dir
