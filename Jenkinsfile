@@ -34,7 +34,7 @@ pipeline {
                 echo "start"
                 node --version
                 // npm ci        
-                npm install react-scripts
+                
                 npm run build
 
                 dir
